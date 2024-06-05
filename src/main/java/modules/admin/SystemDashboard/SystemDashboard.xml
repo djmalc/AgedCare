@@ -1,14 +1,16 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<document name="SystemDashboard" xmlns="http://www.skyve.org/xml/document" xsi:schemaLocation="http://www.skyve.org/xml/document ../../../schemas/document.xsd"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-	<singularAlias>System Dashboard</singularAlias>
-	<pluralAlias>System Dashboard</pluralAlias>
-	<iconStyleClass>fa fa-area-chart</iconStyleClass>
-	<attributes>
-		<collection type="aggregation" name="status">
-			<displayName>Status</displayName>
-			<documentName>Generic</documentName>
-			<minCardinality>0</minCardinality>
-		</collection>
-	</attributes>
+<?xml version="1.0" encoding="UTF-8"?>
+<document xmlns="http://www.skyve.org/xml/document" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="SystemDashboard" xsi:schemaLocation="http://www.skyve.org/xml/document ../../../schemas/document.xsd">
+    <abstract>false</abstract>
+    <singularAlias>System Dashboard</singularAlias>
+    <pluralAlias>System Dashboard</pluralAlias>
+    <audited>true</audited>
+    <iconStyleClass>fa fa-area-chart</iconStyleClass>
+    <attributes>
+        <collection type="aggregation" trackChanges="true" name="status">
+            <displayName>Status</displayName>
+            <documentName>Generic</documentName>
+            <minCardinality>0</minCardinality>
+            <ordering/>
+        </collection>
+    </attributes>
 </document>

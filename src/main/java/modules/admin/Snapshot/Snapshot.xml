@@ -1,40 +1,39 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<document name="Snapshot" 
-			xmlns="http://www.skyve.org/xml/document"
-			xsi:schemaLocation="http://www.skyve.org/xml/document ../../../schemas/document.xsd"
-			xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-	<persistent name="ADM_Snapshot" />
-	<singularAlias>Snapshot</singularAlias>
-	<pluralAlias>Snapshots</pluralAlias>
-	<iconStyleClass>fa fa-camera</iconStyleClass>
-	<bizKey expression="{name} for {queryName} in module {moduleName}"/>
-	<attributes>
-		<text name="moduleName" required="true">
-			<displayName>admin.snapshot.moduleName.displayName</displayName>
-			<domain>variant</domain>
-			<length>100</length>
-		</text>
-		<text name="queryName" required="true">
-			<displayName>admin.snapshot.queryName.displayName</displayName>
-			<domain>dynamic</domain>
-			<length>100</length>
-		</text>
-		<text name="name" required="true">
-			<displayName>admin.snapshot.name.displayName</displayName>
-			<length>256</length>
-		</text>
-		<memo name="snapshot" required="true">
-			<displayName>admin.snapshot.snapshot.displayName</displayName>
-			<index>none</index>
-		</memo>
-		<association type="aggregation" name="copyToUser" persistent="false" trackChanges="false">
-			<displayName>admin.snapshot.association.copyToUser.displayName</displayName>
-			<documentName>UserProxy</documentName>
-			<queryName>qActiveUserProxies</queryName>
-		</association>
-		<text name="copyToUserSnapshotName" persistent="false" trackChanges="false">
-			<displayName>admin.snapshot.copyToUserSnapshotName.displayName</displayName>
-			<length>256</length>
-		</text>
-	</attributes>
+<?xml version="1.0" encoding="UTF-8"?>
+<document xmlns="http://www.skyve.org/xml/document" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="Snapshot" xsi:schemaLocation="http://www.skyve.org/xml/document ../../../schemas/document.xsd">
+    <abstract>false</abstract>
+    <persistent name="ADM_Snapshot"/>
+    <singularAlias>Snapshot</singularAlias>
+    <pluralAlias>Snapshots</pluralAlias>
+    <audited>true</audited>
+    <iconStyleClass>fa fa-camera</iconStyleClass>
+    <bizKey expression="{name} for {queryName} in module {moduleName}"/>
+    <attributes>
+        <text required="true" trackChanges="true" name="moduleName">
+            <displayName>admin.snapshot.moduleName.displayName</displayName>
+            <domain>variant</domain>
+            <length>100</length>
+        </text>
+        <text required="true" trackChanges="true" name="queryName">
+            <displayName>admin.snapshot.queryName.displayName</displayName>
+            <domain>dynamic</domain>
+            <length>100</length>
+        </text>
+        <text required="true" trackChanges="true" name="name">
+            <displayName>admin.snapshot.name.displayName</displayName>
+            <length>256</length>
+        </text>
+        <memo required="true" trackChanges="true" name="snapshot">
+            <displayName>admin.snapshot.snapshot.displayName</displayName>
+            <index>none</index>
+        </memo>
+        <association type="aggregation" persistent="false" trackChanges="false" name="copyToUser">
+            <displayName>admin.snapshot.association.copyToUser.displayName</displayName>
+            <documentName>UserProxy</documentName>
+            <queryName>qActiveUserProxies</queryName>
+        </association>
+        <text persistent="false" trackChanges="false" name="copyToUserSnapshotName">
+            <displayName>admin.snapshot.copyToUserSnapshotName.displayName</displayName>
+            <length>256</length>
+        </text>
+    </attributes>
 </document>

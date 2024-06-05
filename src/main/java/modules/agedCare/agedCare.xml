@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module xmlns="http://www.skyve.org/xml/module" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" title="AgedCare" prototype="true" name="agedCare" xsi:schemaLocation="http://www.skyve.org/xml/module ../../schemas/module.xsd">
+    <homeRef>list</homeRef>
+    <homeDocument>NewDocument</homeDocument>
+    <documents>
+        <document ref="NewDocument"/>
+        <document ref="Resident"/>
+    </documents>
+    <roles>
+        <role name="Viewer">
+            <description><![CDATA[Enough privileges to view AgedCare documents.]]></description>
+            <privileges>
+                <document name="NewDocument" permission="_R__C"/>
+                <document name="Resident" permission="_R__C"/>
+            </privileges>
+            <accesses/>
+        </role>
+        <role name="Maintainer">
+            <description><![CDATA[Enough privileges to create and edit AgedCare documents.]]></description>
+            <privileges>
+                <document name="NewDocument" permission="CRUDC"/>
+                <document name="Resident" permission="CRUDC"/>
+            </privileges>
+            <accesses/>
+        </role>
+    </roles>
+    <menu>
+        <list autoPopulate="true" document="NewDocument" name="New Documents">
+            <role name="Maintainer"/>
+            <role name="Viewer"/>
+        </list>
+        <list autoPopulate="true" document="Resident" name="Residents">
+            <role name="Maintainer"/>
+            <role name="Viewer"/>
+        </list>
+    </menu>
+</module>
